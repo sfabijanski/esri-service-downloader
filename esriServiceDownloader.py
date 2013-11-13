@@ -108,9 +108,9 @@ def get_chunk_size( service_info ):
     """Returns the number of features to request
     """
 
-    chunk = 500 # default
+    chunk_default = 500 # default
     try:
-        chunk = service_info.get( 'maxRecordCount' )
+        chunk = service_info.get( 'maxRecordCount', chunk_default)
     except:
         print "Unexpected error:", sys.exc_info()[0]
     
